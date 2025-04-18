@@ -1,0 +1,118 @@
+/* src/styling/Clip07.css */
+
+/* ---- full‑screen wrapper ---- */
+.clip-wrapper,
+.clip07-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- black fade ---- */
+.black-fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  animation: fadeInBlack 1s forwards ease-in;
+  z-index: 9;
+}
+@keyframes fadeInBlack {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---- credits overlay ---- */
+.credits {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 2rem; */
+  text-align: center;
+  color: #fff;
+  z-index: 10;
+}
+.credits h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin-bottom: 1rem;
+}
+.credit-role {
+  font-size: clamp(1.2rem, 3.5vw, 2rem);
+  margin: 0.5rem 0;
+}
+.credit-tools {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  margin: 0.5rem 0;
+}
+.credit-copy {
+  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+  margin: 1rem 0 2rem;
+}
+
+/* ---- buttons container ---- */
+.credits-buttons {
+  display: flex;
+  gap: clamp(1rem, 4vw, 2rem);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.scene-button2 {
+  min-width: clamp(8rem, 20vw, 16rem);
+  min-height: clamp(2rem, 5vh, 3rem);
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 2px solid #fff;
+  cursor: pointer;
+  pointer-events: auto;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  opacity: 0;
+  animation: fadeInButton 0.8s ease forwards;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.scene-button2:hover {
+  background-color: #df830100;
+  border-bottom: 2px solid #cf640d00;
+  color: #1e1e1e;
+}
+@keyframes fadeInButton {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---- mobile pan overrides ---- */
+@media (max-width: 700px) {
+  .clip07-wrapper .clip-video {
+    object-position: 82.5% center !important;
+    animation: none !important;
+  }
+  .clip07-wrapper.zoomed .clip-video {
+    object-position: center center !important;
+    transition: object-position 1s ease-out !important;
+  }
+}
+
+/* ---- re‑center at end when credits show ---- */
+.clip07-wrapper.centered .clip-video {
+  object-position: center center !important;
+  transition: object-position 0.5s ease-out !important;
+}

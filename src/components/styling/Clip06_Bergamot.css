@@ -1,0 +1,80 @@
+/* src/styling/Clip06_Bergamot.css */
+
+/* — Bergamot Text Block — */
+.bergamot-text {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translateY(-60%);
+  color: #1e1e1e;
+  max-width: 50rem;
+}
+.bergamot-text h1 {
+  font-size: clamp(3rem, 8vw, 10rem);
+  line-height: 1.3;
+  font-weight: bold;
+  font-style: italic;
+  border-bottom: 1px solid #1e1e1e;
+}
+.bergamot-text p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: 1rem;
+}
+
+/* — Fade‑In Keyframes for Back Button — */
+@keyframes fadeInButton {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* — “Back to Ingredients” Button — */
+/* .back-button {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  background: transparent;
+  color: #1e1e1e;
+  border: none;
+  border-bottom: 2px solid #1e1e1e;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  opacity: 0;
+  animation: fadeInButton 0.8s ease forwards;
+}
+.back-button:hover {
+  background-color: #df830100;
+  border-bottom: 2px solid #cf640d00;
+  color: #fff;
+} */
+
+/* — Mobile‑Only Zoom & Layout Overrides (≤700px) — */
+@media (max-width: 700px) {
+  /* lock start at 82.5%, then zoom into center */
+  .clip06-wrapper.bergamot-in .clip-video {
+    object-position: 82.5% center !important;
+  }
+  .clip06-wrapper.bergamot-in.zoomed .clip-video {
+    object-position: 45% center !important;
+    transition: object-position 1s ease-out !important;
+  }
+
+  /* lift & center text 10% from top */
+  .clip06-wrapper.bergamot-in .bergamot-text {
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+  }
+
+  /* nudge back button up */
+  /* .clip06-wrapper.bergamot-in .back-button {
+    bottom: 8% !important;
+  } */
+}

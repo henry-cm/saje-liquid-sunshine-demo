@@ -1,0 +1,84 @@
+/* Clip06_Lime.css */
+
+/* — Lime Text — */
+.fruit-text1 {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  transform: translateY(-60%);
+  color: #1e1e1e;
+  max-width: 50rem;
+}
+.fruit-text1 h1 {
+  font-size: clamp(3rem, 8vw, 10rem);
+  line-height: 1.3;
+  font-weight: bold;
+  font-style: italic;
+  border-bottom: 1px solid #1e1e1e;
+  margin-bottom: 2rem;
+}
+.fruit-text1 p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: 1rem;
+}
+
+/* — Back Button Fade — */
+@keyframes fadeInButton {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* .back-button {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  background: transparent;
+  color: #1e1e1e;
+  border: none;
+  border-bottom: 2px solid #1e1e1e;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  opacity: 0;
+  animation: fadeInButton 0.8s ease forwards;
+}
+.back-button:hover {
+  background-color: #df830100;
+  border-bottom: 2px solid #cf640d00;
+  color: #fff;
+} */
+
+/* — Mobile: Zoom + Layout (≤700px) — */
+@media (max-width: 700px) {
+  /* ensure transition is on */
+  .clip06-wrapper .clip-video {
+    transition: object-position 1s ease-out;
+  }
+
+  /* start locked at 82.5% */
+  .clip06-wrapper.lime-in .clip-video {
+    object-position: 82.5% center !important;
+  }
+  /* when .zoomed appears, zoom into center */
+  .clip06-wrapper.lime-in.zoomed .clip-video {
+    object-position: center center !important;
+  }
+
+  /* lift & center text */
+  .clip06-wrapper.lime-in .fruit-text1 {
+    top: 10%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, 0);
+    text-align: center;
+  }
+  /* nudge back button */
+  /* .clip06-wrapper.lime-in .back-button {
+    bottom: 8% !important;
+  } */
+}

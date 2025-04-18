@@ -1,0 +1,41 @@
+/* Clip05.css */
+.clip-wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity 0.8s ease;
+}
+
+.clip-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* White‐fade overlay */
+.white-fade {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.white-fade.active {
+  opacity: 1;
+}
+
+/* ======================== MOBILE OVERRIDE: Match Clip04 End ======================== */
+@media (max-width: 700px) {
+  .clip05-wrapper .clip-video {
+    /* Lock to Clip04’s ending frame (52.5% center) and remove any animation */
+    object-position: 52.5% center !important;
+    animation: none !important;
+  }
+}

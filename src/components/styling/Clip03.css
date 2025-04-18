@@ -1,0 +1,234 @@
+/* Base container and video styling for Clip03 only */
+.clip03-wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity 0.8s ease;
+}
+
+.clip03-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Default desktop view: centered */
+  object-position: center center;
+}
+
+/* Fluid typography and positioning for the left text block ("Reminder") */
+.clip03-left {
+  position: absolute;
+  top: 8%;
+  left: 5%;
+  max-width: 35rem;
+  font-size: clamp(1rem, 2vw, 2rem);
+  color: #1e1e1e;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: clip03FadeInLeft 0.8s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes clip03FadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fluid typography and positioning for the right text block ("How to Use") */
+.clip03-right {
+  position: absolute;
+  bottom: 8%;
+  /* Keep the horizontal offset as in your original design */
+  transform: translate(-50%, -50%);
+  right: 5%;
+  max-width: 35rem;
+  font-size: clamp(1rem, 2vw, 2rem);
+  color: #1e1e1e;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  opacity: 0;
+  transform: translateX(30px);
+  animation: clip03FadeInRight 0.8s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes clip03FadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fluid typography for titles and descriptions */
+.clip03-title {
+  font-size: clamp(1.8rem, 6vw, 7rem);
+  max-width: 40rem;
+  line-height: 1.3;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  font-style: italic;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.clip03-description {
+  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+  margin-bottom: 1rem;
+}
+
+/* Mobile override for the video */
+/* On mobile, start with the video positioned as in Clip02 (72% center),
+   then animate to center center over 1 second */
+@media (max-width: 600px) {
+  .clip03-video {
+    object-position: 72% center;
+    -webkit-animation: clip03PanLeft 1s forwards;
+    animation: clip03PanLeft 1s forwards;
+  }
+}
+
+@-webkit-keyframes clip03PanLeft {
+  from {
+    object-position: 72% center;
+  }
+  to {
+    object-position: center center;
+  }
+}
+@keyframes clip03PanLeft {
+  from {
+    object-position: 72% center;
+  }
+  to {
+    object-position: 60% center;
+  }
+}
+
+/* Additional mobile adjustments to optimize text layout for Clip03 */
+@media (max-width: 700px) {
+  /* In mobile, stack the text blocks in a single column */
+  .clip03-text {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 1%;
+    left: 10%;
+    right: 1%;
+    text-align: end;
+  }
+
+  /* Hide the left block ("Reminder") */
+  .clip03-left {
+    display: none;
+  }
+
+  /* Position the "How to Use" block at the very top */
+  .clip03-right {
+    position: absolute;
+    top: 0%;
+    left: 38%;
+    right: 0%;
+    margin-bottom: 0;
+    transform: none;
+    animation: clip03FadeInRight 0.8s ease forwards;
+    animation-delay: 0.5s;
+  }
+
+  .clip03-title {
+    font-size: clamp(3rem, 8vw, 8rem);
+    max-width: 50rem;
+    line-height: 1.3;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    font-style: italic;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  .clip03-description {
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    /* Removed absolute positioning to let the description flow naturally */
+    margin: 0;
+  }
+}
+
+/* Medium screen adjustments (tablets, 701px to 1024px) */
+@media (min-width: 701px) and (max-width: 1024px) {
+  .clip03-left {
+    top: 7%;
+    left: 5%;
+    max-width: 40rem;
+    font-size: clamp(1rem, 2.2vw, 2rem);
+  }
+  .clip03-right {
+    bottom: 7%;
+    right: 5%;
+    max-width: 40rem;
+    font-size: clamp(1rem, 2.2vw, 2rem);
+  }
+
+  .clip03-description {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  }
+}
+
+/* Big screen adjustments (1300px and above) */
+/* (Additional adjustments here as needed) */
+
+@media (max-width: 1600px) {
+  .clip03-left {
+    max-width: 30rem;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+  }
+  .clip03-right {
+    max-width: 30rem;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+  }
+  */ .clip03-description {
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
+  }
+}
+
+@media (max-width: 1500px) {
+  .clip03-left {
+    max-width: 25rem;
+  }
+  .clip03-right {
+    max-width: 25rem;
+  }
+}
+@media (max-width: 1270px) {
+  .clip03-left {
+    max-width: 20rem;
+  }
+  .clip03-right {
+    max-width: 20rem;
+  }
+}
+@media (max-width: 1050px) {
+  .clip03-left {
+    max-width: 17.5rem;
+  }
+  .clip03-right {
+    max-width: 17.5rem;
+  }
+}
+@media (max-width: 950px) {
+  .clip03-left {
+    max-width: 15rem;
+  }
+  .clip03-right {
+    max-width: 15rem;
+  }
+}
+@media (max-width: 800px) {
+  .clip03-left {
+    max-width: 12rem;
+  }
+  .clip03-right {
+    max-width: 12rem;
+  }
+}

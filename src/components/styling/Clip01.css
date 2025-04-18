@@ -1,0 +1,133 @@
+.clip-wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity 0.8s ease;
+}
+
+.clip-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Disclaimer text styling (drastically reduced) */
+.clip1-text {
+  position: absolute;
+  bottom: 1%;
+  left: 5%;
+  right: 5%;
+  font-size: 0.8rem;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInText 0.8s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.button-container1 {
+  position: absolute;
+  bottom: 30%;
+  padding-bottom: 1%;
+  left: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+
+/* Adding white-space: nowrap to keep button text on one line */
+.button-container1 button {
+  min-width: 16rem;
+  min-height: 3rem;
+  font-size: 2.8rem;
+  background-color: transparent;
+  color: #e6e6e6;
+  border: none;
+  border-bottom: 2px solid #e6e6e6;
+  cursor: pointer;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  font-weight: 400;
+  font-family: "Playfair Display", serif;
+  opacity: 0;
+  animation: fadeInButton 0.8s ease forwards;
+  animation-delay: 0s;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+@keyframes fadeInButton {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.button-container1 button:hover {
+  background-color: #df830100;
+  border-bottom: 2px solid #cf6400;
+  color: #030303;
+}
+
+/* Responsive adjustments for tablets and small laptops */
+@media (max-width: 1024px) {
+  .clip1-text {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .button-container1 {
+    bottom: 35%;
+    left: 80%;
+    transform: translateX(-50%);
+    align-items: start;
+  }
+
+  .button-container1 button {
+    min-width: 12rem;
+    min-height: 2.5rem;
+    font-size: 2rem;
+  }
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 700px) {
+  .clip1-text {
+    font-size: 0.45rem;
+    padding: 0.1rem 0.1rem;
+    bottom: 3%;
+  }
+
+  /* Move the list menu to the top of the screen on mobile */
+  .button-container1 {
+    top: 0.5%;
+    bottom: auto;
+    left: 34%;
+    transform: translateX(-50%);
+    padding: 1rem;
+    align-items: left;
+  }
+
+  .button-container1 button {
+    min-width: 8rem;
+    min-height: 2rem;
+    font-size: 1.5rem;
+  }
+}
