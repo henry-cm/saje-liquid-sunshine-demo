@@ -56,6 +56,7 @@ function Clip07({ play, zIndex, onDone }) {
       <video
         ref={videoRef}
         src={combineClip}
+        preload="auto"
         muted
         playsInline
         className="clip-video"
@@ -66,13 +67,13 @@ function Clip07({ play, zIndex, onDone }) {
       {showCredits && (
         <div className="credits">
           <h1>Credits</h1>
-          <p className="credit-role">Designed and developed solo by Henry CM</p>
+          <p className="credit-role">Designed and developedby Henry CM</p>
           <p className="credit-tools">
             Made with ZBrush, Substance Painter, Photoshop, Illustrator, Maya,
             Arnold, React, and Figma
           </p>
           <p className="credit-copy">
-            © {new Date().getFullYear()} Henry CM — A Solo Production
+            © {new Date().getFullYear()} Henry CM for Saje Natural Wellness
           </p>
           <div className="credits-buttons">
             <button

@@ -35,6 +35,7 @@ function Clip02({ play, zIndex, onDone }) {
       <video
         ref={videoRef}
         src={saje2}
+        preload="auto"
         muted
         playsInline
         className="clip02-video"

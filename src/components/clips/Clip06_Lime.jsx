@@ -67,6 +67,7 @@ function Clip06_Lime({ play, zIndex, onDone }) {
       <video
         ref={videoRef}
         src={stage === "in" ? zoomIn : zoomOut}
+        preload="auto"
         muted
         playsInline
         className="clip-video"
