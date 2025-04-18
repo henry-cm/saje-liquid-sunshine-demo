@@ -29,10 +29,6 @@ function ScenePlayer({ step, onDone }) {
   const [showPrompt, setShowPrompt] = useState(false);
 
   useEffect(() => {
-    document.querySelectorAll("video").forEach((video) => {
-      video.preload = "auto";
-      video.load();
-    });
     setShowPrompt(false);
     // only schedule prompt for steps 1 and 2
     if (step === 1 || step === 2) {
