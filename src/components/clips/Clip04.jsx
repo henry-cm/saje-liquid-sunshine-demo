@@ -42,7 +42,6 @@ function Clip04({ play, zIndex, onDone }) {
       <video
         ref={videoRef}
         src={saje4}
-        preload="auto"
         muted
         playsInline
         className="clip-video"
