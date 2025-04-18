@@ -37,6 +37,7 @@ function Clip06_MotherHub({ play, zIndex, onDone }) {
       <video
         ref={videoRef}
         src={saje06}
+        preload="auto"
         muted
         playsInline
         className="clip-video"

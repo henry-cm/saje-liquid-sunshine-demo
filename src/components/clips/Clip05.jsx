@@ -59,6 +59,7 @@ function Clip05({ play, zIndex, onDone }) {
       <video
         ref={videoRef}
         src={saje5}
+        preload="auto"
         muted
         playsInline
         className="clip-video"
