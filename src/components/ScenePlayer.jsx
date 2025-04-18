@@ -1,4 +1,3 @@
-// src/components/ScenePlayer.jsx
 import { useEffect, useState } from "react";
 import Clip01 from "./clips/Clip01";
 import Clip02 from "./clips/Clip02";
@@ -28,9 +27,22 @@ function ScenePlayer({ step, onDone }) {
 
   const [showPrompt, setShowPrompt] = useState(false);
 
+  // Preload all video elements as soon as the component mounts
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      // schedule after next paint
+      window.requestAnimationFrame(() => {
+        document.querySelectorAll("video").forEach((video) => {
+          video.preload = "auto";
+          video.load();
+        });
+      });
+    }
+  }, []);
+
+  // Show scroll prompt after 2s for steps 1 & 2
   useEffect(() => {
     setShowPrompt(false);
-    // only schedule prompt for steps 1 and 2
     if (step === 1 || step === 2) {
       const timer = setTimeout(() => setShowPrompt(true), 2000);
       return () => clearTimeout(timer);
