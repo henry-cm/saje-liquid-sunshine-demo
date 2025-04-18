@@ -68,7 +68,6 @@ function Clip06_Bergamot({ play, zIndex, onDone }) {
       <video
         ref={videoRef}
         src={stage === "in" ? zoomIn : zoomOut}
-        preload="auto"
         muted
         playsInline
         className="clip-video"

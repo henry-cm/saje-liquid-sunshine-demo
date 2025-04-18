@@ -56,7 +56,6 @@ function Clip07({ play, zIndex, onDone }) {
       <video
         ref={videoRef}
         src={combineClip}
-        preload="auto"
         muted
         playsInline
         className="clip-video"
