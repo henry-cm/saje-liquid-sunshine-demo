@@ -80,7 +80,7 @@ function Clip01({ play, zIndex, onDone }) {
         bubble in the top‑right corner. Use your scroll wheel or trackpad to
         advance, or click on‑screen buttons when they appear.
         <br />
-        Best viewed on desktop with Chrome browser.
+        Best viewed on desktop with Chrome browswer.
       </p>
     </div>
   );
