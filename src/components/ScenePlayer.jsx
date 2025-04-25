@@ -44,7 +44,10 @@ function ScenePlayer({ step, onDone }) {
     <div className="scene-wrapper" style={{ position: "relative" }}>
       <ActiveClip play={true} zIndex={clips.length - step} onDone={onDone} />
       {showPrompt && (step === 1 || step === 2) && (
-        <div className="scroll-prompt" />
+        <div className="scroll-prompt">
+          <div className="scroll-dot" />
+          <div className="scroll-text">scroll</div>
+        </div>
       )}
     </div>
   );
