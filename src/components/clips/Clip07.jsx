@@ -65,14 +65,15 @@ function Clip07({ play, zIndex, onDone }) {
 
       {showCredits && (
         <div className="credits">
-          <h1>Credits</h1>
-          <p className="credit-role">Designed and developedby Henry CM</p>
+          {/* <h1>Made With</h1> */}
+          {/* <p className="credit-role">Designed and developedby Henry CM</p> */}
           <p className="credit-tools">
             Made with ZBrush, Substance Painter, Photoshop, Illustrator, Maya,
             Arnold, React, and Figma
           </p>
           <p className="credit-copy">
-            © {new Date().getFullYear()} Henry CM for Saje Natural Wellness
+            {new Date().getFullYear()} Saje Natural Business <br></br>Website by
+            Henry CM
           </p>
           <div className="credits-buttons">
             <button

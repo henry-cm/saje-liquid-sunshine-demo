@@ -75,12 +75,12 @@ function Clip01({ play, zIndex, onDone }) {
         )}
       </div>
       <p className="clip1-text">
-        Welcome to a cinematic scroll experience—full‑screen scenes play at key
-        moments, and you’ll only move forward when prompted by the pulsing
-        bubble in the top‑right corner. Use your scroll wheel or trackpad to
-        advance, or click on‑screen buttons when they appear.
+        Welcome to a cinematic scroll experience. Full‑screen scenes play at key
+        moments, and you’ll only be able to move forward when prompted by the
+        pulsing bubble in the top‑right corner. Use your scroll wheel or
+        trackpad to advance, or click on‑screen buttons when they appear.
         <br />
-        Best viewed on desktop with Chrome browswer.
+        Best viewed on desktop.
       </p>
     </div>
   );
