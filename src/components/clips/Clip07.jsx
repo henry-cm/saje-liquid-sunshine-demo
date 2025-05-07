@@ -68,8 +68,7 @@ function Clip07({ play, zIndex, onDone }) {
           {/* <h1>Made With</h1> */}
           {/* <p className="credit-role">Designed and developedby Henry CM</p> */}
           <p className="credit-tools">
-            Made with ZBrush, Substance Painter, Photoshop, Illustrator, Maya,
-            Arnold, React, and Figma
+            Built with Autodesk Maya & Adobe Creative Cloud
           </p>
           <p className="credit-copy">
             {new Date().getFullYear()} Saje Natural Business <br></br>Website by
